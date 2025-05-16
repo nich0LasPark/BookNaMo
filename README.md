@@ -107,7 +107,7 @@ dotnet run
 <table>
   <tr>
     <td align="center"><img src="" width="100"><br /><b>Nichol King B. Cayanan</b><br />Full Stack Developer & Lead Architect</td>
-    <td align="center"><img src="" width="100"><br /><b>Jhay Lord V. Celeste</b><br />Quality Assurance Engineer</td>
+    <td align="center"><img src="https://scontent.fmnl30-1.fna.fbcdn.net/v/t1.15752-9/494577669_937764425010961_3409036637784912473_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeGGhV3hIo8i5or5zNgr3s3eFNTxMYY-fQIU1PExhj59AnWNQUWVDU33OtlFIH70CePN6CFIZm0O0VsTTJ1h2Ccp&_nc_ohc=xxZjxB1sYTYQ7kNvwHWnY7D&_nc_oc=Admal5g32Ew19mwnlfOHCi73DWQ4HqWs5h2vYIYlBRMmMig9y81YQR5YLD7oibHh7hE&_nc_zt=23&_nc_ht=scontent.fmnl30-1.fna&oh=03_Q7cD2QHRusmAeI-LZhDc8DylYOCTP3_hs4nChJoJZv2v1pLyWg&oe=684E3D2C" width="100"><br /><b>Jhay Lord V. Celeste</b><br />Quality Assurance Engineer</td>
   </tr>
   <tr>
     <td align="center"><img src="" width="100"><br /><b>Nicko A. Coronel</b><br />Content & Documentation Specialist</td>
