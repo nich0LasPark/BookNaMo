@@ -90,11 +90,11 @@ dotnet run
 <table>
   <tr>
     <td><img src="https://i.ibb.co/LXtyQBDM/homepage.png" alt="Home Page" width="400"/></td>
-    <td><img src="https://ibb.co/Wpq9FVb1" alt="Book Catalog" width="400"/></td>
+    <td><img src="https://i.ibb.co/NnQhpT8z/bookcatalog.png" alt="Book Catalog" width="400"/></td>
   </tr>
   <tr>
-    <td><img src="https://ibb.co/p69g1mmG" alt="User Dashboard" width="400"/></td>
-    <td><img src="https://ibb.co/5W5Mc66m" alt="Admin Panel" width="400"/></td>
+    <td><img src="https://i.ibb.co/vCKbcttg/user.png" alt="User Dashboard" width="400"/></td>
+    <td><img src="https://i.ibb.co/Y7tRj33m/admin.png" alt="Admin Panel" width="400"/></td>
   </tr>
 </table>
 
