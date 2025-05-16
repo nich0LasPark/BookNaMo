@@ -89,7 +89,7 @@ dotnet run
 
 <table>
   <tr>
-    <td><img src="[https://ibb.co/xtjbmwKy](https://ibb.co/5W5Mc66m)" alt="Home Page" width="400"/></td>
+    <td><img src="https://i.ibb.co/LXtyQBDM/homepage.png" alt="Home Page" width="400"/></td>
     <td><img src="https://ibb.co/Wpq9FVb1" alt="Book Catalog" width="400"/></td>
   </tr>
   <tr>
