@@ -1,7 +1,7 @@
 <h1 align="center">📚 BookNamo - Modern Library Management System</h1>
 
 <p align="center">
-  <img src="wwwroot/images/logo.png" alt="BookNamo Logo" width="200">
+  <img src="https://i.ibb.co/tTD3nZt5/booknamo-logo-wide.png" alt="BookNamo Logo">
 </p>
 
 <p align="center">
