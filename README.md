@@ -89,14 +89,16 @@ dotnet run
 
 <table>
   <tr>
-    <td><img src="path_to_screenshot" alt="Home Page" width="400"/></td>
-    <td><img src="path_to_screenshot" alt="Book Catalog" width="400"/></td>
+    <td><img src="https://ibb.co/xtjbmwKy" alt="Home Page" width="400"/></td>
+    <td><img src="https://ibb.co/Wpq9FVb1" alt="Book Catalog" width="400"/></td>
   </tr>
   <tr>
-    <td><img src="path_to_screenshot" alt="User Dashboard" width="400"/></td>
-    <td><img src="path_to_screenshot" alt="Admin Panel" width="400"/></td>
+    <td><img src="https://ibb.co/p69g1mmG" alt="User Dashboard" width="400"/></td>
+    <td><img src="https://ibb.co/5W5Mc66m" alt="Admin Panel" width="400"/></td>
   </tr>
 </table>
+
+
 
 <hr>
 
@@ -133,10 +135,6 @@ dotnet run
 
 <hr>
 
-<h2>📜 License</h2>
-
-<p>BookNamo is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.</p>
-
 <hr>
 
 <h2>🤝 Contributing</h2>
@@ -157,7 +155,7 @@ dotnet run
 
 <p>Have questions or suggestions? Reach out to us!</p>
 
-<p>Email: team@booknamo.com</p>
+<p>Email: nkbcayanan@gmail.com</p>
 
 <hr>
 
