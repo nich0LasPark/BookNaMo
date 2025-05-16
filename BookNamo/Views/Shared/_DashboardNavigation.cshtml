@@ -1,0 +1,32 @@
+﻿<div class="quick-nav card mb-4">
+    <div class="card-header">
+        <h5>Quick Actions</h5>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-3 col-sm-6 mb-3">
+                <a asp-controller="Home" asp-action="Browse" class="btn btn-primary-booknamo btn-block">
+                    <i class="bi bi-search"></i> Browse Books
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-3">
+                <a asp-controller="Borrow" asp-action="MyBorrowings" class="btn btn-secondary-booknamo btn-block">
+                    <i class="bi bi-book"></i> My Borrowings
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-3">
+                <a asp-controller="Home" asp-action="MyBooks" class="btn btn-primary-booknamo btn-block">
+                    <i class="bi bi-clock-history"></i> Borrow History
+                </a>
+            </div>
+            @if (User.IsInRole("Admin"))
+            {
+                <div class="col-md-3 col-sm-6 mb-3">
+                    <a asp-controller="Book" asp-action="Index" class="btn btn-secondary-booknamo btn-block">
+                        <i class="bi bi-gear"></i> Manage Books
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>

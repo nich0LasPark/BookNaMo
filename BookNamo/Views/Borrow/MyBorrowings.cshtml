@@ -1,0 +1,62 @@
+﻿@model List<BorrowRecord>
+
+<h2>My Current Borrowings</h2>
+
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                Quick Actions
+            </div>
+            <div class="card-body">
+                <a asp-controller="Home" asp-action="Browse" class="btn btn-primary">
+                    <i class="bi bi-search"></i> Browse More Books
+                </a>
+                <a asp-controller="Home" asp-action="MyBooks" class="btn btn-info">
+                    <i class="bi bi-clock-history"></i> View Borrowing History
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">
+        <h4>No books currently borrowed</h4>
+        <p>You don't have any books checked out at the moment. Browse our collection to find something to read!</p>
+    </div>
+}
+else
+{
+    <div class="row">
+        @foreach (var record in Model)
+        {
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header d-flex justify-content-between">
+                        <h5 class="card-title">@record.Book.Title</h5>
+                        @{
+                            var daysLeft = (record.DueDate - DateTime.Now).Days;
+                            var badgeClass = daysLeft > 5 ? "bg-success" : (daysLeft > 2 ? "bg-warning" : "bg-danger");
+                        }
+                        <span class="badge @badgeClass">
+                            @(daysLeft > 0 ? $"{daysLeft} days left" : "Overdue!")
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-muted">@record.Book.Author</h6>
+                        <p><strong>Borrowed on:</strong> @record.BorrowDate.ToString("MMM dd, yyyy")</p>
+                        <p><strong>Due on:</strong> @record.DueDate.ToString("MMM dd, yyyy")</p>
+                    </div>
+                    <div class="card-footer">
+                        <form asp-action="ReturnBook" asp-controller="Borrow" method="post">
+                            <input type="hidden" name="recordId" value="@record.Id" />
+                            <button type="submit" class="btn btn-success">Return Book</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

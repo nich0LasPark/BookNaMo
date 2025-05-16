@@ -1,0 +1,86 @@
+﻿@* UI for managing user profile information with enhanced visual design. *@
+
+@page
+@model BookNamo.Areas.Identity.Pages.Account.Manage.IndexModel
+@{
+    ViewData["Title"] = "Profile";
+    ViewData["ActivePage"] = ManageNavPages.Index;
+}
+
+<div class="identity-container">
+    <h3 class="identity-heading">@ViewData["Title"]</h3>
+    <partial name="_StatusMessage" for="StatusMessage" />
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-light">
+            <div class="d-flex align-items-center">
+                <i class="bi bi-person-circle me-2 text-primary" style="font-size: 1.5rem;"></i>
+                <h5 class="mb-0">Account Information</h5>
+            </div>
+        </div>
+        <div class="card-body">
+            <p class="text-muted mb-4">
+                Your profile information is used throughout BookNamo to personalize your experience.
+                You can update your username at any time.
+            </p>
+
+            <form id="profile-form" method="post" class="identity-form">
+                @Html.AntiForgeryToken()
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <div class="mb-4">
+                    <label asp-for="Username" class="form-label">Username</label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-light">
+                            <i class="bi bi-person"></i>
+                        </span>
+                        <input asp-for="Username" class="form-control" placeholder="Enter your username" />
+                    </div>
+                    <span asp-validation-for="Username" class="text-danger"></span>
+                    <div class="form-text text-muted">
+                        This is the name displayed to other users.
+                    </div>
+                </div>
+
+                <div class="d-grid gap-2">
+                    <button id="update-profile-button" type="submit" class="btn btn-primary">
+                        <i class="bi bi-check-circle me-2"></i> Save Changes
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="alert alert-info" role="alert">
+        <div class="d-flex">
+            <div class="me-3">
+                <i class="bi bi-info-circle" style="font-size: 1.5rem;"></i>
+            </div>
+            <div>
+                <h5>Account Settings</h5>
+                <p class="mb-1">From your account settings, you can:</p>
+                <ul class="mb-0 ps-3">
+                    <li>Change your username</li>
+                    <li>Update your password</li>
+                    <li>Manage your personal data</li>
+                </ul>
+                <hr class="my-3">
+                <p class="mb-0">
+                    Your email address is permanently set to ensure you receive important notifications
+                    about your account and book transactions.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        // Force navbar to refresh after saving
+        document.getElementById("profile-form").addEventListener("submit", function() {
+            // Store in sessionStorage that we should refresh
+            sessionStorage.setItem("refreshNavbar", "true");
+        });
+    </script>
+}

@@ -1,0 +1,84 @@
+﻿@* UI for OTP (One-Time Password) verification after registration. Users enter the code sent to their email. *@
+
+@page
+@model BookNamo.Areas.Identity.Pages.Account.VerifyOtpModel
+@{
+    ViewData["Title"] = "Verify Your Account";
+}
+
+<div class="identity-container">
+    <h1 class="identity-heading">@ViewData["Title"]</h1>
+
+    @if (!string.IsNullOrEmpty(Model.StatusMessage))
+    {
+        <div class="alert @(Model.StatusMessage.Contains("success") ? "alert-success" : "alert-info") mb-4">
+            <p><i class="bi @(Model.StatusMessage.Contains("success") ? "bi-check-circle-fill" : "bi-info-circle-fill")"></i> @Model.StatusMessage</p>
+        </div>
+    }
+
+    <div class="card otp-verification-card">
+        <div class="card-header bg-dark text-white">
+            <h4 class="mb-0"><i class="bi bi-shield-lock"></i> Email Verification</h4>
+        </div>
+        <div class="card-body identity-form">
+            <p class="mb-4">A verification code has been sent to <strong>@Model.Email</strong>. Please enter the 6-digit code below to complete your registration.</p>
+
+            <form id="verifyOtp" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+
+                <input type="hidden" asp-for="Email" />
+
+                <div class="otp-input-container">
+                    <label asp-for="OtpCode" class="form-label">Verification Code</label>
+                    <input asp-for="OtpCode" class="form-control otp-input" placeholder="Enter 6-digit code"
+                           autocomplete="off" maxlength="6" autofocus />
+                    <span asp-validation-for="OtpCode" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3 mt-4">
+                    <button type="submit" class="btn btn-primary w-100">
+                        <i class="bi bi-check-circle"></i> Verify Code
+                    </button>
+                </div>
+
+                <div class="text-center mt-4 otp-actions">
+                    <p>
+                        <i class="bi bi-clock"></i> Code expires in 10 minutes
+                    </p>
+                    <p>
+                        Didn't receive the code?
+                        <a asp-page-handler="ResendCode" asp-route-email="@Model.Email" class="resend-link">
+                            <i class="bi bi-send"></i> Resend Code
+                        </a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        // Format OTP input to enforce numeric entry
+        document.addEventListener('DOMContentLoaded', function() {
+            const otpInput = document.querySelector('.otp-input');
+
+            otpInput.addEventListener('keypress', function(e) {
+                // Allow only numbers
+                if (!/^\d*$/.test(e.key)) {
+                    e.preventDefault();
+                }
+            });
+
+            otpInput.addEventListener('paste', function(e) {
+                // Get pasted content and filter to keep only numbers
+                const pastedText = (e.clipboardData || window.clipboardData).getData('text');
+                const numericOnly = pastedText.replace(/[^\d]/g, '').substring(0, 6);
+
+                e.preventDefault();
+                this.value = numericOnly;
+            });
+        });
+    </script>
+}

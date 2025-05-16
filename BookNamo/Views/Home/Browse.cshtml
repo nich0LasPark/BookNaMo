@@ -1,0 +1,90 @@
+﻿@model List<Book>
+
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-booknamo">
+                <h5>Browse Our Collection</h5>
+            </div>
+            <div class="card-body">
+                <form method="get" class="row g-3">
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search by title, author, or ISBN..."
+                                   name="searchTerm" value="@Context.Request.Query["searchTerm"]">
+                            <button class="btn btn-primary-booknamo" type="submit">
+                                <i class="bi bi-search"></i> Search
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <select name="genre" class="form-select" onchange="this.form.submit()">
+                            <option value="">All Genres</option>
+                            @foreach (var genre in ViewBag.Genres)
+                            {
+                                <option value="@genre" selected="@(Context.Request.Query["genre"] == genre)">@genre</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        @if (!string.IsNullOrEmpty(Context.Request.Query["searchTerm"]) ||
+                        !string.IsNullOrEmpty(Context.Request.Query["genre"]))
+                        {
+                            <a asp-action="Browse" class="btn btn-outline-booknamo w-100">Clear Filters</a>
+                        }
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">
+        <h4>No books found</h4>
+        <p>Try adjusting your search criteria or browse our complete collection.</p>
+    </div>
+}
+else
+{
+    <div class="row">
+        @foreach (var book in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 book-card">
+                    <div class="card-header">
+                        <h5 class="card-title text-truncate">@book.Title</h5>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-muted">@book.Author</h6>
+                        <div class="book-metadata mb-3">
+                            <span class="badge badge-booknamo-primary">@book.Genre</span>
+                            <span class="badge badge-booknamo-secondary">@book.PublicationYear</span>
+                        </div>
+                        <p class="card-text book-description">@(book.Description?.Length > 100 ? book.Description.Substring(0, 100) + "..." : book.Description)</p>
+                        <div class="book-availability">
+                            <small class="text-muted">Available: @book.AvailableCopies of @book.TotalCopies</small>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <a asp-action="Details" asp-controller="Book" asp-route-id="@book.Id" class="btn btn-secondary-booknamo btn-sm">Details</a>
+                        @if (User.Identity.IsAuthenticated && book.AvailableCopies > 0)
+                        {
+                            <form asp-action="BorrowBook" asp-controller="Borrow" method="post">
+                                <input type="hidden" name="bookId" value="@book.Id" />
+                                <button type="submit" class="btn btn-primary-booknamo btn-sm">Borrow</button>
+                            </form>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+<div class="mt-4">
+    <a asp-action="Index" class="btn btn-secondary-booknamo">
+        <i class="bi bi-arrow-left"></i> Back to Home
+    </a>
+</div>

@@ -1,0 +1,113 @@
+﻿@{
+    ViewData["Title"] = "About Us";
+}
+
+<div class="container">
+    <div class="row justify-content-center mb-5">
+        <div class="col-md-10">
+            <div class="card shadow">
+                <div class="card-header bg-dark text-white">
+                    <h1 class="display-4 text-center">@ViewData["Title"]</h1>
+                </div>
+                <div class="card-body">
+                    <h2 class="mb-4">Meet the Partially Booked</h2>
+
+                    <p class="lead">
+                        BookNamo is a modern library management system developed by a team of passionate
+                        developers committed to creating an efficient and user-friendly platform for book lovers.
+                    </p>
+
+                    <div class="row mt-5">
+                        <div class="col-md-12">
+                            <h3 class="border-bottom pb-2">Our Development Team</h3>
+
+                            <div class="row row-cols-1 row-cols-md-2 g-4 mt-3">
+                                <div class="col">
+                                    <div class="card h-100 team-card">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><i class="bi bi-person-circle me-2"></i>Nichol King B. Cayanan</h5>
+                                            <p class="card-text text-muted">Full Stack Developer & Lead Architect</p>
+                                            <p class="card-text">
+                                                Led the full stack development efforts, implemented the email and OTP verification
+                                                services, and designed the database schema for the entire application.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="card h-100 team-card">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><i class="bi bi-person-circle me-2"></i>Jhay Lord V. Celeste</h5>
+                                            <p class="card-text text-muted">Quality Assurance Engineer</p>
+                                            <p class="card-text">
+                                                Conducted thorough analysis and testing of the platform to ensure reliability,
+                                                performance, and a seamless user experience across all features.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="card h-100 team-card">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><i class="bi bi-person-circle me-2"></i>Nicko A. Coronel</h5>
+                                            <p class="card-text text-muted">Content & Documentation Specialist</p>
+                                            <p class="card-text">
+                                                Created comprehensive documentation and managed all content creation for the platform,
+                                                ensuring clear instructions and rich information resources for users.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="card h-100 team-card">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><i class="bi bi-person-circle me-2"></i>Joemarie E. Cagalitan Jr.</h5>
+                                            <p class="card-text text-muted">UI/UX Designer</p>
+                                            <p class="card-text">
+                                                Designed the visual identity of BookNamo, including logos, color schemes, and overall
+                                                aesthetics, creating a cohesive and engaging user interface.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-5">
+                        <h3 class="border-bottom pb-2">About BookNamo</h3>
+                        <p>
+                            BookNamo is designed to make library management simpler and more efficient. Our platform
+                            offers seamless book borrowing, returns tracking, and user notifications to enhance the
+                            library experience for both administrators and readers.
+                        </p>
+                        <p>
+                            The project was developed in 2025 as part of our commitment to modernizing library systems
+                            with cutting-edge technology and user-centered design principles.
+                        </p>
+                    </div>
+                </div>
+                <div class="card-footer text-center">
+                    <p class="mb-0">
+                        <i class="bi bi-code-slash me-2"></i>Partially Booked CS2B
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .team-card {
+        transition: transform 0.2s;
+        border-color: var(--color-taupe);
+    }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+</style>

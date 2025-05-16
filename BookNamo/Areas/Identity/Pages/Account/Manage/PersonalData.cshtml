@@ -1,0 +1,86 @@
+﻿@page
+@model BookNamo.Areas.Identity.Pages.Account.Manage.PersonalDataModel
+@{
+    ViewData["Title"] = "Personal Data";
+    ViewData["ActivePage"] = ManageNavPages.PersonalData;
+}
+
+<div class="identity-container">
+    <h3 class="identity-heading">@ViewData["Title"]</h3>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-light">
+            <div class="d-flex align-items-center">
+                <i class="bi bi-person-badge me-2 text-primary" style="font-size: 1.5rem;"></i>
+                <h5 class="mb-0">Your Personal Data</h5>
+            </div>
+        </div>
+        <div class="card-body">
+            <p class="text-muted">
+                Your account contains personal data that you have provided to us. This page allows you to download or delete that data.
+            </p>
+            <p class="text-muted mb-4">
+                <strong>Warning:</strong> Deleting your data will permanently remove your account, and cannot be recovered.
+            </p>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="card h-100 border-primary-subtle">
+                        <div class="card-body text-center p-4">
+                            <i class="bi bi-cloud-download text-primary mb-3" style="font-size: 2rem;"></i>
+                            <h5 class="card-title">Download Your Data</h5>
+                            <p class="card-text text-muted mb-4">
+                                Download a copy of all your personal information stored in our system.
+                            </p>
+                            <form id="download-data" asp-page="DownloadPersonalData" method="post">
+                                <button class="btn btn-outline-primary w-100" type="submit">
+                                    <i class="bi bi-download me-2"></i> Download
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <div class="card h-100 border-danger-subtle">
+                        <div class="card-body text-center p-4">
+                            <i class="bi bi-exclamation-triangle text-danger mb-3" style="font-size: 2rem;"></i>
+                            <h5 class="card-title">Delete Your Data</h5>
+                            <p class="card-text text-muted mb-4">
+                                Delete all your personal data and close your account permanently.
+                            </p>
+                            <p>
+                                <a id="delete" class="btn btn-outline-danger w-100" asp-page="DeletePersonalData">
+                                    <i class="bi bi-trash me-2"></i> Delete
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="alert alert-info" role="alert">
+        <div class="d-flex">
+            <div class="me-3">
+                <i class="bi bi-info-circle" style="font-size: 1.5rem;"></i>
+            </div>
+            <div>
+                <h5>Information We Store</h5>
+                <p class="mb-0">We collect and store the following types of personal data:</p>
+                <ul class="mb-0 ps-3">
+                    <li>Account information (username, email)</li>
+                    <li>Book borrowing history</li>
+                    <li>Due dates and return dates</li>
+                    <li>User preferences and settings</li>
+                </ul>
+                <hr class="my-3">
+                <p class="mb-0">
+                    For more information about our data retention and privacy policies, please
+                    <a asp-controller="Home" asp-action="About">contact us</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

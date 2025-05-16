@@ -1,0 +1,40 @@
+﻿@* UI for displaying a success message after email verification via OTP. *@
+
+@page
+@model BookNamo.Areas.Identity.Pages.Account.VerificationSuccessModel
+@{
+    ViewData["Title"] = "Email Verified";
+}
+
+<div class="identity-container">
+    <div class="verification-success text-center">
+        <div class="success-icon mb-4">
+            <i class="bi bi-check-circle-fill"></i>
+        </div>
+
+        <h1 class="identity-heading">@ViewData["Title"]</h1>
+
+        <div class="alert alert-success mb-4">
+            <p>Congratulations! Your email has been successfully verified.</p>
+            <p>Your BookNamo account is now active and ready to use.</p>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-body">
+                <h4>What's Next?</h4>
+                <ul class="text-start next-steps">
+                    <li>Browse our extensive book collection</li>
+                    <li>Borrow books from our library</li>
+                    <li>Manage your account settings</li>
+                    <li>Receive notifications about due dates</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <a asp-page="./Login" asp-route-email="@Model.Email" class="btn btn-lg btn-primary">
+                <i class="bi bi-box-arrow-in-right"></i> Log in to your account
+            </a>
+        </div>
+    </div>
+</div>

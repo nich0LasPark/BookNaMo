@@ -1,0 +1,83 @@
+﻿@model List<BorrowRecord>
+
+<div class="container">
+    <h2>My Borrowing History</h2>
+
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    Quick Actions
+                </div>
+                <div class="card-body">
+                    <a asp-controller="Home" asp-action="Browse" class="btn btn-primary">
+                        <i class="bi bi-search"></i> Browse More Books
+                    </a>
+                    @if (Model.Any(br => br.Status == "Borrowed"))
+                    {
+                        <a asp-controller="Borrow" asp-action="MyBorrowings" class="btn btn-success">
+                            <i class="bi bi-book"></i> View Current Borrowings
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info">
+            <h4>No borrowing history</h4>
+            <p>You haven't borrowed any books yet. Browse our collection to find something to read!</p>
+        </div>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Book Title</th>
+                        <th>Author</th>
+                        <th>Borrow Date</th>
+                        <th>Due Date</th>
+                        <th>Return Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var record in Model)
+                    {
+                        <tr>
+                            <td>@record.Book.Title</td>
+                            <td>@record.Book.Author</td>
+                            <td>@record.BorrowDate.ToString("MMM dd, yyyy")</td>
+                            <td>@record.DueDate.ToString("MMM dd, yyyy")</td>
+                            <td>
+                                @(record.ReturnDate.HasValue ? record.ReturnDate.Value.ToString("MMM dd, yyyy") : "-")
+                            </td>
+                            <td>
+                                @if (record.Status == "Borrowed")
+                                {
+                                    <span class="badge bg-primary">@record.Status</span>
+                                }
+                                else if (record.Status == "Returned")
+                                {
+                                    <span class="badge bg-success">@record.Status</span>
+                                }
+                                else if (record.Status == "Overdue")
+                                {
+                                    <span class="badge bg-danger">@record.Status</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary">@record.Status</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>

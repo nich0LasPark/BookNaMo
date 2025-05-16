@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\BookNamoTest2.props" />
+</Project>

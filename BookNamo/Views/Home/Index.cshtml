@@ -1,0 +1,79 @@
+﻿@model List<Book>
+
+<div class="text-center mb-4">
+    <img src="~/images/booknamo-logo-wide.png" alt="BookNamo Logo" class="booknamo-logo-large" />
+</div>
+
+<div class="jumbotron">
+    <h1 class="display-4">Welcome to BookNaMo!</h1>
+    <p class="lead">Your digital library management system.</p>
+    <hr class="my-4">
+    <p>Browse our collection, borrow books, and manage your reading journey all in one place.</p>
+</div>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <partial name="_DashboardNavigation" />
+}
+else
+{
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header card-header-booknamo">
+                    <h5 class="card-title">New User?</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Sign up to borrow books and track your reading.</p>
+                    <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-primary-booknamo">Register Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header card-header-booknamo">
+                    <h5 class="card-title">Already a Member?</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Login to access your account and borrowed books.</p>
+                    <a asp-area="Identity" asp-page="/Account/Login" class="btn btn-secondary-booknamo">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<h3>Featured Books</h3>
+<div class="row">
+    @foreach (var book in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 book-card">
+                <div class="card-header">
+                    <h5 class="card-title text-truncate">@book.Title</h5>
+                </div>
+                <div class="card-body">
+                    <h6 class="card-subtitle mb-2 text-muted">@book.Author</h6>
+                    <div class="book-metadata mb-3">
+                        <span class="badge badge-booknamo-primary">@book.Genre</span>
+                        <span class="badge badge-booknamo-secondary">@book.PublicationYear</span>
+                    </div>
+                    <p class="card-text book-description">@(book.Description?.Length > 100 ? book.Description.Substring(0, 100) + "..." : book.Description)</p>
+                    <div class="book-availability">
+                        <small class="text-muted">Available: @book.AvailableCopies of @book.TotalCopies</small>
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-between">
+                    <a asp-action="Details" asp-controller="Book" asp-route-id="@book.Id" class="btn btn-secondary-booknamo btn-sm">Details</a>
+                    @if (User.Identity.IsAuthenticated && book.AvailableCopies > 0)
+                    {
+                        <form asp-action="BorrowBook" asp-controller="Borrow" method="post">
+                            <input type="hidden" name="bookId" value="@book.Id" />
+                            <button type="submit" class="btn btn-primary-booknamo btn-sm">Borrow</button>
+                        </form>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>

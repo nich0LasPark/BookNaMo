@@ -1,0 +1,795 @@
+﻿/* Main site-wide CSS. Contains layout, color palette, and component styles for BookNamo. */
+
+:root {
+    /* New color palette from ColorHunt */
+    --color-white: #F2F2F2;
+    --color-beige: #EAE4D5;
+    --color-taupe: #B6B09F;
+    --color-black: #000000;
+    --color-text-dark: #000000;
+    --color-text-light: #F2F2F2;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: var(--color-white);
+    color: var(--color-text-dark);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Navbar styling */
+.navbar-booknamo {
+    background-color: var(--color-black) !important;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.navbar-logo {
+    height: 40px;
+    margin-right: 8px;
+}
+
+/* Fix navbar text wrapping issues */
+.navbar {
+    padding: 0.5rem 1rem;
+}
+
+.navbar-expand-lg .navbar-collapse {
+    flex-wrap: nowrap;
+}
+
+.navbar-nav {
+    flex-wrap: nowrap;
+}
+
+    .navbar-nav .nav-link {
+        white-space: nowrap;
+        padding: 0.5rem 0.75rem;
+    }
+
+.navbar .dropdown-menu {
+    min-width: max-content;
+}
+
+/* Fix search bar and user info overflow */
+@media (min-width: 992px) {
+    .navbar .d-flex.me-2 {
+        margin-right: 0.5rem !important;
+    }
+
+    .navbar form.d-flex {
+        flex: 0 1 auto;
+        min-width: 200px;
+    }
+
+    .navbar-nav:last-child {
+        margin-left: 0.5rem;
+    }
+}
+
+/* Adjust navbar on smaller screens */
+@media (max-width: 991.98px) {
+    .navbar-expand-lg .navbar-collapse {
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+
+    .navbar form.d-flex {
+        flex-wrap: nowrap;
+    }
+
+        .navbar form.d-flex .form-control {
+            min-width: 100px;
+        }
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+    background-color: var(--color-black);
+    color: var(--color-text-light);
+}
+
+    .footer a {
+        color: var(--color-beige);
+    }
+
+        .footer a:hover {
+            color: var(--color-white);
+        }
+
+/* Custom buttons */
+.btn-primary-booknamo {
+    background-color: var(--color-black);
+    border-color: var(--color-black);
+    color: var(--color-text-light);
+}
+
+    .btn-primary-booknamo:hover {
+        background-color: #333333;
+        border-color: #333333;
+        color: var(--color-text-light);
+    }
+
+.btn-secondary-booknamo {
+    background-color: var(--color-taupe);
+    border-color: var(--color-taupe);
+    color: var(--color-text-dark);
+}
+
+    .btn-secondary-booknamo:hover {
+        background-color: #a09884;
+        border-color: #a09884;
+        color: var(--color-text-light);
+    }
+
+.btn-outline-booknamo {
+    background-color: transparent;
+    border-color: var(--color-black);
+    color: var(--color-black);
+}
+
+    .btn-outline-booknamo:hover {
+        background-color: var(--color-black);
+        color: var(--color-text-light);
+    }
+
+/* Card styling */
+.card {
+    border-color: var(--color-taupe);
+    background-color: #ffffff;
+}
+
+.card-header-booknamo {
+    background-color: var(--color-beige);
+    color: var(--color-text-dark);
+}
+
+/* Book Card Styling */
+.book-card {
+    transition: transform 0.2s;
+    border: 1px solid var(--color-taupe);
+}
+
+    .book-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .book-card .card-header {
+        background-color: var(--color-beige);
+        color: var(--color-text-dark);
+    }
+
+    .book-card .card-footer {
+        background-color: var(--color-white);
+    }
+
+.book-description {
+    height: 4.5rem;
+    overflow: hidden;
+}
+
+.book-metadata {
+    margin-bottom: 0.5rem;
+}
+
+.book-availability {
+    margin-top: auto;
+}
+
+/* Badges */
+.badge-booknamo-primary {
+    background-color: var(--color-black);
+    color: var(--color-text-light);
+}
+
+.badge-booknamo-secondary {
+    background-color: var(--color-taupe);
+    color: var(--color-text-dark);
+}
+
+/* Dashboard Quick Navigation */
+.quick-nav {
+    background-color: #ffffff;
+    border-color: var(--color-taupe);
+}
+
+    .quick-nav .card-header {
+        background-color: var(--color-black);
+        color: var(--color-text-light);
+    }
+
+    .quick-nav .btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        padding: 1rem;
+    }
+
+        .quick-nav .btn i {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+    .quick-nav .btn-block {
+        display: block;
+        width: 100%;
+    }
+
+/* Jumbotron custom styling */
+.jumbotron {
+    padding: 2rem;
+    margin-bottom: 2rem;
+    background-color: var(--color-beige);
+    border-radius: 0.3rem;
+}
+
+    .jumbotron h1 {
+        color: var(--color-black);
+    }
+
+/* Progress bar for book availability */
+.progress {
+    height: 1.5rem;
+    background-color: #e9ecef;
+}
+
+.progress-bar-booknamo {
+    background-color: var(--color-black);
+}
+
+/* Tables */
+.table-booknamo thead {
+    background-color: var(--color-black);
+    color: var(--color-text-light);
+}
+
+.table-booknamo-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(182, 176, 159, 0.1);
+}
+
+/* Form controls */
+.form-control:focus {
+    border-color: var(--color-black);
+    box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.25);
+}
+
+/* Logo styling */
+.booknamo-logo {
+    max-width: 200px;
+    height: auto;
+}
+
+.logo-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Logo styling */
+.booknamo-logo-large {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    margin: 2rem auto;
+    display: block;
+}
+
+/* Form and input improvements for better text wrapping */
+.form-control {
+    width: 100%;
+    max-width: 100%;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+textarea.form-control {
+    resize: vertical;
+}
+
+/* Fix for button groups in forms */
+.btn-group {
+    flex-wrap: wrap;
+}
+
+/* Improved spacing for stacked columns */
+@media (max-width: 767.98px) {
+    .col-md-6:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+
+    .btn-group {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+        .btn-group .btn {
+            margin-right: 0 !important;
+            margin-bottom: 0.5rem;
+            width: 100%;
+        }
+}
+
+/* Fix for admin dropdown menu */
+.dropdown-menu {
+    width: auto;
+    min-width: 10rem;
+    max-width: 100%;
+}
+
+/* Ensure proper text wrapping in cards and tables */
+.card-title,
+.card-text,
+td,
+th {
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+    .booknamo-logo-large {
+        max-width: 90%;
+    }
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .quick-nav .btn {
+        margin-bottom: 0.5rem;
+    }
+
+    .navbar-logo {
+        height: 30px;
+    }
+}
+
+/* Fix for user email display in navbar */
+.navbar-nav > li > a.nav-link,
+.navbar-nav > li > form > button.nav-link {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+}
+
+/* Ensure search boxes have appropriate width */
+.form-control[type="search"] {
+    min-width: 150px;
+}
+
+/* Fix for long email addresses or usernames */
+@media (max-width: 1200px) {
+    .navbar-nav > li > a.nav-link,
+    .navbar-nav > li > form > button.nav-link {
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar-nav > li > a.nav-link,
+    .navbar-nav > li > form > button.nav-link {
+        max-width: none;
+    }
+}
+/* Add these at the end of your existing CSS */
+
+/* Fix text readability in navbar */
+.navbar-dark .navbar-nav .nav-link,
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+    color: var(--color-text-light) !important;
+}
+
+/* Ensure logout button text is readable */
+.navbar-dark .nav-link.btn.btn-link,
+.navbar-dark .nav-link.btn.btn-link:hover,
+.navbar-dark .nav-link.btn.btn-link:focus {
+    color: var(--color-text-light) !important;
+    text-decoration: none;
+}
+
+/* Fix dropdown menu text */
+.dropdown-menu .dropdown-item {
+    color: var(--color-text-dark);
+}
+
+/* Fix all links in dark backgrounds to ensure they're readable */
+.bg-dark a, 
+.navbar-dark a, 
+.footer a,
+.card-header-booknamo a {
+    color: var(--color-text-light);
+}
+
+/* Ensure text in dark navbar is visible */
+.navbar-booknamo .navbar-brand,
+.navbar-booknamo .nav-link {
+    color: var(--color-text-light) !important;
+}
+
+/* Fix any text-dark classes that might be overriding our styles */
+.navbar-dark .text-dark {
+    color: var(--color-text-light) !important;
+}
+/* Add these at the end of your existing CSS in site.css */
+
+/* Fix text readability in navbar */
+.navbar-dark .navbar-nav .nav-link,
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+    color: var(--color-text-light) !important;
+}
+
+/* Ensure logout button text is readable */
+.navbar-dark .nav-link.btn.btn-link,
+.navbar-dark .nav-link.btn.btn-link:hover,
+.navbar-dark .nav-link.btn.btn-link:focus {
+    color: var(--color-text-light) !important;
+    text-decoration: none;
+}
+
+/* Ensure text in dark navbar is visible */
+.navbar-booknamo .navbar-brand,
+.navbar-booknamo .nav-link {
+    color: var(--color-text-light) !important;
+}
+
+/* Fix any text-dark classes that might be overriding our styles */
+.navbar-dark .text-dark {
+    color: var(--color-text-light) !important;
+}
+
+/* Password toggle styling */
+.password-container {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 10;
+}
+
+.form-floating .password-toggle {
+    top: 32%; /* Adjusted for floating labels */
+}
+
+.password-toggle i {
+    font-size: 1.2rem;
+    color: var(--color-black);
+}
+
+.password-toggle:hover i {
+    color: var(--color-taupe);
+}
+
+/* Identity Pages Styling - Login, Register, and Account Management */
+
+/* Form containers for identity pages */
+.identity-container {
+    background-color: #ffffff;
+    border: 1px solid var(--color-taupe);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+/* Page headings for identity pages */
+h1.identity-heading,
+h2.identity-heading,
+h3.identity-heading {
+    color: var(--color-black);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Identity form styling */
+.identity-form hr {
+    border-color: var(--color-taupe);
+    margin: 1.5rem 0;
+}
+
+/* Style for form controls in identity pages */
+.identity-form .form-floating .form-control {
+    border-color: var(--color-taupe);
+    background-color: var(--color-white);
+}
+
+    .identity-form .form-floating .form-control:focus {
+        border-color: var(--color-black);
+        background-color: #ffffff;
+    }
+
+.identity-form .form-floating label {
+    color: var(--color-text-dark);
+}
+
+/* Custom styling for checkboxes */
+.identity-form .form-check-input:checked {
+    background-color: var(--color-black);
+    border-color: var(--color-black);
+}
+
+/* Links in identity pages */
+.identity-form a {
+    color: var(--color-black);
+    text-decoration: none;
+}
+
+    .identity-form a:hover {
+        color: #333333;
+        text-decoration: underline;
+    }
+
+/* Buttons in identity forms */
+.identity-form .btn-primary {
+    background-color: var(--color-black);
+    border-color: var(--color-black);
+    color: var(--color-text-light);
+}
+
+    .identity-form .btn-primary:hover {
+        background-color: #333333;
+        border-color: #333333;
+    }
+
+/* Secondary buttons */
+.identity-form .btn-secondary {
+    background-color: var(--color-taupe);
+    border-color: var(--color-taupe);
+    color: var(--color-text-dark);
+}
+
+    .identity-form .btn-secondary:hover {
+        background-color: #a09884;
+        border-color: #a09884;
+        color: var(--color-text-light);
+    }
+
+/* Status message styling */
+.identity-container .alert {
+    border-radius: 4px;
+}
+
+/* Management navigation pills */
+.nav-pills .nav-link {
+    color: var(--color-text-dark);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-taupe);
+    margin-bottom: 0.5rem;
+}
+
+    .nav-pills .nav-link:hover {
+        background-color: var(--color-beige);
+    }
+
+    .nav-pills .nav-link.active {
+        background-color: var(--color-black);
+        color: var(--color-text-light);
+        border-color: var(--color-black);
+    }
+
+/* Password visibility toggle styling (updated) */
+.password-container {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 10;
+}
+
+.form-floating .password-toggle {
+    top: 32%; /* Adjusted for floating labels */
+}
+
+.password-toggle i {
+    font-size: 1.2rem;
+    color: var(--color-taupe);
+}
+
+.password-toggle:hover i {
+    color: var(--color-black);
+}
+
+/* Adjustment for validation messages */
+.text-danger {
+    color: #dc3545 !important;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Card styling for identity pages */
+.identity-card {
+    border-color: var(--color-taupe);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+    .identity-card .card-header {
+        background-color: var(--color-beige);
+        color: var(--color-text-dark);
+        border-bottom: 1px solid var(--color-taupe);
+    }
+
+    .identity-card .card-footer {
+        background-color: var(--color-white);
+        border-top: 1px solid var(--color-taupe);
+    }
+
+/* Responsive adjustments for identity pages */
+@media (max-width: 576px) {
+    .identity-container {
+        padding: 1rem;
+    }
+}
+
+/* OTP Verification Styling */
+.otp-verification-card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.otp-input-container {
+    margin: 1.5rem 0;
+}
+
+.otp-input {
+    letter-spacing: 8px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 0.75rem 0.5rem;
+    height: auto;
+}
+
+.otp-actions {
+    color: var(--color-taupe);
+    border-top: 1px solid var(--color-beige);
+    padding-top: 1.25rem;
+}
+
+.resend-link {
+    font-weight: 600;
+    color: var(--color-black);
+}
+
+    .resend-link:hover {
+        color: #333333;
+    }
+
+/* Verification Success Page */
+.verification-success .success-icon {
+    font-size: 5rem;
+    color: #28a745;
+}
+
+.verification-success .next-steps li {
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+    .verification-success .next-steps li:before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: var(--color-black);
+    }
+
+.verification-success .btn-lg {
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+}
+
+/* Enhanced Password field and personal data page styling */
+.input-group-text {
+    border-left: 0;
+}
+
+.input-group .form-control:focus + .input-group-text {
+    border-color: var(--color-black);
+}
+
+.card.border-primary-subtle {
+    border-color: rgba(13, 110, 253, 0.3) !important;
+}
+
+.card.border-danger-subtle {
+    border-color: rgba(220, 53, 69, 0.3) !important;
+}
+
+.password-toggle.input-group-text {
+    cursor: pointer;
+}
+
+    .password-toggle.input-group-text:hover {
+        background-color: rgba(0, 0, 0, 0.03) !important;
+    }
+
+/* Password strength meter */
+.password-strength-meter {
+    height: 5px;
+    margin-top: 5px;
+    border-radius: 3px;
+    background: #e9ecef;
+    overflow: hidden;
+}
+
+.password-strength-meter-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.5s ease;
+}
+
+.strength-weak {
+    background-color: #dc3545;
+    width: 25%;
+}
+
+.strength-fair {
+    background-color: #ffc107;
+    width: 50%;
+}
+
+.strength-good {
+    background-color: #6f42c1;
+    width: 75%;
+}
+
+.strength-strong {
+    background-color: #198754;
+    width: 100%;
+}
+
+/* Enhanced Password field and personal data page styling */
+.input-group-text {
+    border-left: 0;
+}
+
+.input-group .form-control:focus + .input-group-text {
+    border-color: var(--color-black);
+}
+
+.card.border-primary-subtle {
+    border-color: rgba(13, 110, 253, 0.3) !important;
+}
+
+.card.border-danger-subtle {
+    border-color: rgba(220, 53, 69, 0.3) !important;
+}
+
+.password-toggle.input-group-text {
+    cursor: pointer;
+}
+
+.password-toggle.input-group-text:hover {
+    background-color: rgba(0, 0, 0, 0.03) !important;
+}
