@@ -106,12 +106,12 @@ dotnet run
 
 <table>
   <tr>
-    <td align="center"><img src="" width="100"><br /><b>Nichol King B. Cayanan</b><br />Full Stack Developer & Lead Architect</td>
+    <td align="center"><img src="https://scontent.fmnl30-2.fna.fbcdn.net/v/t1.15752-9/496510376_723907690313019_512439223276101556_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeF2U528OAC8pLIQFl5ACkGmL68BRbkyF-ovrwFFuTIX6isoCJ6cZLPSCTvqmN2gVKOLoeMqYMkSU1wl4Hw0574U&_nc_ohc=Q37PzBnuC60Q7kNvwEm10-H&_nc_oc=AdkYdveN8cHfdV1GS8bqpoex7k_DtuItXa0wZf9YzDinZzdPvbiQXf0vL8PlmB2nDJ8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl30-2.fna&oh=03_Q7cD2QEzAKxMNW_AG7OZgPjeewkfoifemXokgyQGeVuBBPAMmg&oe=68539E4F" width="100"><br /><b>Nichol King B. Cayanan</b><br />Full Stack Developer & Lead Architect</td>
     <td align="center"><img src="https://scontent.fmnl30-1.fna.fbcdn.net/v/t1.15752-9/494577669_937764425010961_3409036637784912473_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeGGhV3hIo8i5or5zNgr3s3eFNTxMYY-fQIU1PExhj59AnWNQUWVDU33OtlFIH70CePN6CFIZm0O0VsTTJ1h2Ccp&_nc_ohc=xxZjxB1sYTYQ7kNvwHWnY7D&_nc_oc=Admal5g32Ew19mwnlfOHCi73DWQ4HqWs5h2vYIYlBRMmMig9y81YQR5YLD7oibHh7hE&_nc_zt=23&_nc_ht=scontent.fmnl30-1.fna&oh=03_Q7cD2QHRusmAeI-LZhDc8DylYOCTP3_hs4nChJoJZv2v1pLyWg&oe=684E3D2C" width="100"><br /><b>Jhay Lord V. Celeste</b><br />Quality Assurance Engineer</td>
   </tr>
   <tr>
-    <td align="center"><img src="" width="100"><br /><b>Nicko A. Coronel</b><br />Content & Documentation Specialist</td>
-    <td align="center"><img src="" width="100"><br /><b>Joemarie E. Cagalitan Jr.</b><br />UI/UX Designer</td>
+    <td align="center"><img src="https://scontent.fmnl30-2.fna.fbcdn.net/v/t1.15752-9/496512866_658496767012635_3077812457280650890_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeHI_v0acm7g1_4AhwvnZ_uZgDZ7TVP9E7eANntNU_0Tt2TY4H8J1cFZ9FbjS5HyTkVfLzRDQ1AApXY4gaZmSiXW&_nc_ohc=QWFLDoLrJFEQ7kNvwHkSr0O&_nc_oc=AdmNdBzjy643_wPOHvyXafj7lniq8xC7MMGnQkgygzD9doq1LQXpEBTKFQ0RSK0A9gc&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl30-2.fna&oh=03_Q7cD2QHsdsfvaE5JtvMgCq7OJ6GcdJmhR2Ws3R54mD4-P27hxQ&oe=68538776" width="100"><br /><b>Nicko A. Coronel</b><br />Content & Documentation Specialist</td>
+    <td align="center"><img src="https://scontent.fmnl30-2.fna.fbcdn.net/v/t1.15752-9/494355896_876572817978207_7434677141269590923_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeFGorMibDsNXQYeeYya5PFK4GX4QXbjmSLgZfhBduOZIjssnFti1sOr9HCI0agbBmZld8H0Pa3WSBKZb0dTsACU&_nc_ohc=sBp2jUQDwXQQ7kNvwFy8IoL&_nc_oc=AdnpstcTf-bBe6YARbpJLyT34b2DwDODCeSWqzjYv4Ndpmd0ILzXHwqzxmPhM7V9A6s&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl30-2.fna&oh=03_Q7cD2QFxgc5bG343y35FxdjUapLhB7lRF08cFGwRtU-1FanjxA&oe=68538988" width="100"><br /><b>Joemarie E. Cagalitan Jr.</b><br />UI/UX Designer</td>
   </tr>
 </table>
 
